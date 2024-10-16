@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 300px;
+    height: 300px;
+    background-color: rgba(235, 230, 230, 0.911);
+}
+.celda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.celda:nth-child(1), .celda:nth-child(2), .celda:nth-child(3){
+    border-bottom: 4px solid black;
+}
+.celda:nth-child(4), .celda:nth-child(5), .celda:nth-child(6){
+    border-bottom: 4px solid black;
+}
+.celda:nth-child(1), .celda:nth-child(4), .celda:nth-child(7){
+    border-right: 4px solid black;
+}
+.celda:nth-child(2), .celda:nth-child(5), .celda:nth-child(8){
+    border-right: 4px solid black;
+}
+
+.celda:hover {
+    transform: scale(1.05); 
+    background-color: rgba(143, 142, 142, 0.795);
+}
+
+#turnoActual {
+    position: absolute;
+    margin-left: 600px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+p{
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(197, 21, 21);
+}
