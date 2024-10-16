@@ -55,9 +55,9 @@ function tresEnRaya(arrayTabla){
     //Fin comprobar filas
 
     //Comprobar columnas
-    for (let i = 0; i < arrayTabla.length; i++) { //Misma lógica pero ahora iterando las columnas
-        for (let j = 0; j < arrayTabla.length-1; j++) {
-            if(arrayTabla[i][j]!=null && arrayTabla[j][i]==arrayTabla[j+1][i]){
+    for (let j = 0; j < arrayTabla.length; j++) { //Misma lógica pero ahora iterando las columnas
+        for (let i = 0; i < arrayTabla.length-1; i++) {
+            if(arrayTabla[i][j]!=null && arrayTabla[i][j]==arrayTabla[i+1][j]){
                 ganador=true;
             }else{
                 ganador=false;
