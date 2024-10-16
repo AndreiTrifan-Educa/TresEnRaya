@@ -3,7 +3,7 @@ let arrayTabla = [
     [null, null, null],
     [null, null, null],
 ];
-let turno = 'X'; // Jugador que empieza, puede ser 'X' o 'O'
+let turno = 'X'; //Jugador que empieza, en este caso el X
 
 const celdas = document.querySelectorAll('.celda');
 const turnoDiv = document.getElementById('turnoIMG');
@@ -11,7 +11,6 @@ const turnoDiv = document.getElementById('turnoIMG');
 turnoDiv.src="cross.png";
 
 
-// Agregar un evento click a cada celda
 celdas.forEach((celda, index) => {
     celda.addEventListener('click', () => {
         // Solo permite marcar celdas vacías
@@ -21,11 +20,11 @@ celdas.forEach((celda, index) => {
             img.src = (turno === "X") ? "cross.png" : "circulo.png";
             img.style.width = "80%"; 
             img.style.height = "80%";
-            celda.appendChild(img); // Añadir la imagen a la celda
+            celda.appendChild(img); // Añade la imagen a la celda
             if (tresEnRaya(arrayTabla)) {
-                alert("¡El jugador " + turno + " ha ganado!");
+                alert("El jugador " + turno + " ha ganado");
             } else {
-                turno = (turno === "X") ? "O" : "X"; // Cambiar turno
+                turno = (turno === "X") ? "O" : "X"; // Cambia el turno
                 turnoDiv.src = (turno === "X") ? "cross.png" : "circulo.png"; 
             }
         }
@@ -48,7 +47,6 @@ function tresEnRaya(arrayTabla){
             }
         }
         if(ganador){
-            console.log("1");
             return ganador;
         }
     }
@@ -65,7 +63,6 @@ function tresEnRaya(arrayTabla){
             }
         }
         if(ganador){
-            console.log("2");
             return ganador;
         }
     }
@@ -78,7 +75,7 @@ function tresEnRaya(arrayTabla){
                     ganador=true;
                 }else{
                     ganador=false;
-                    break;
+                    break;g
                 }
             }else{
                 ganador=false;
@@ -86,7 +83,6 @@ function tresEnRaya(arrayTabla){
             }     
     }
     if(ganador){
-        console.log("3");
         return ganador;
     }
     //Fin comprobar diagonal \
